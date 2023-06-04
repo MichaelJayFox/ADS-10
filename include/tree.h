@@ -11,7 +11,7 @@ class Tree {
     std::vector<Tree*> children;
     char child;
     };
-    Ptr* childs;
+    Node* childs;
     explicit Tree(char child) {
         childs = new Node;
         childs->child = child;
