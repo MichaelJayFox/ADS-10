@@ -11,14 +11,12 @@ int factorial(int n) {
 std::vector<char> getPerm(const Tree& tree, int n) {
     if (tree.getSize() == 0 || n > factorial(tree.getSize()))
         return {};
-    if (tree.getCharacter_set() == '*')
+    if (tree.getCh() == '*')
         n--;
     std::vector<char> result;
     int temp = factorial(tree.getSize() - 1);
-    result.push_back(tree[n / temp].getCharacter_set());
+    result.push_back(tree[n / temp].getCh());
     std::vector<char> b = getPerm(tree[n / temp], n % temp);
-    result.insert(res.end(), b.begin(), b.end());
+    result.insert(result.end(), b.begin(), b.end());
     return result;
-}
-
 }
