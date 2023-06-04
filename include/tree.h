@@ -19,7 +19,7 @@ class Tree {
     void create(const std::vector<char>& vec) {
         for (int i = 0; i < vec.size(); i++) {
             std::vector<char> temp = vec;
-            child->childs.push_back(new Tree(temp[i]));
+            childs->children.push_back(new Tree(temp[i]));
             temp.erase(temp.begin() + i);
             childs->children[i]->create(temp);
         }
